@@ -1,0 +1,1444 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="page-title">Astrologer - Consult India's Top Astrologers Live & Certified Remedies</title>
+  <meta name="description"
+    content="Astrologer - Consult India's top verified astrologers live. Get accurate Kundli analysis, Gun Milan matching, daily horoscopes, 3D tarot readings, and Certified Gemstones & Rudraksha." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=2.3" />
+</head>
+
+<body>
+  <!-- Header / Navigation Bar -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <div class="nav-left">
+        <button type="button" class="brand-logo" id="brand-logo" aria-label="Open navigation menu" aria-expanded="false" title="Click or tap to open menu">
+          <div class="logo-icon-wrap" title="Lord Vinayagar - Divine Wisdom & Prosperity">
+            <img src="images/vinayagar-logo.jpg" alt="Lord Vinayagar Logo" class="vinayagar-logo-img" />
+          </div>
+          <div class="brand-text">
+            <span class="brand-name">Astro<span class="gold-text">loger</span></span>
+            <span class="brand-tagline" data-i18n="brand_tagline">Vedic Wisdom • Certified Guidance</span>
+          </div>
+        </button>
+      </div>
+
+      <!-- Nav Actions -->
+      <div class="nav-right">
+        <!-- 5-Language Selector Button -->
+        <div class="lang-selector-wrap" title="Select Language">
+          <span class="lang-globe-icon">🌐</span>
+          <select id="lang-select" class="lang-dropdown" aria-label="Choose Language">
+            <option value="en">English</option>
+            <option value="ta">தமிழ் (Tamil)</option>
+            <option value="hi">हिन्दी (Hindi)</option>
+            <option value="te">తెలుగు (Telugu)</option>
+            <option value="kn">ಕನ್ನಡ (Kannada)</option>
+          </select>
+        </div>
+
+        <!-- Theme Switcher -->
+        <button class="theme-toggle-btn" id="theme-toggle-btn" title="Toggle Dark/Light Mode" aria-label="Toggle Theme">
+          <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <path
+              d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42">
+            </path>
+          </svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <!-- Load Balance / Wallet Button -->
+        <button class="wallet-btn" id="wallet-btn" aria-label="Load Balance and Wallet Recharge" title="Wallet Balance: ₹150 • Click to Load Balance">
+          <span class="wallet-icon">👛</span>
+          <div class="wallet-info">
+            <span class="wallet-label" data-i18n="wallet_label">Wallet</span>
+            <span class="wallet-amount" id="wallet-balance">₹150</span>
+          </div>
+          <span class="load-balance-pill" data-i18n="load_balance">+ Load Balance</span>
+        </button>
+
+        <!-- Cart Badge -->
+        <button class="cart-btn" id="cart-btn" aria-label="Open Shopping Cart">
+          <span class="cart-icon">🛍️</span>
+          <span class="cart-count" id="cart-count">0</span>
+        </button>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle Mobile Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Notification Bar -->
+    <div class="nav-promo-bar">
+      <span class="promo-badge" data-i18n="promo_badge">FIRST CHAT FREE</span>
+      <span class="promo-text" data-i18n="promo_text">✨ Consult India's Top Astrologers Live | Gemstones & Rudraksha
+        automatically fulfilled via <strong>Meesho</strong></span>
+    </div>
+  </header>
+
+  <!-- Slide-Out Navigation Drawer (Expands when Website Logo is Clicked) -->
+  <div class="menu-drawer-backdrop" id="menu-drawer-backdrop" aria-hidden="true"></div>
+  <aside class="slide-out-menu" id="slide-out-menu" role="dialog" aria-modal="true" aria-label="Main Navigation Menu">
+    <div class="menu-drawer-header">
+      <div class="menu-drawer-brand">
+        <div class="logo-icon-wrap" style="width:38px;height:38px;">
+          <img src="images/vinayagar-logo.jpg" alt="Lord Vinayagar Logo" class="vinayagar-logo-img" />
+        </div>
+        <div class="drawer-brand-text">
+          <span class="drawer-brand-name">Astro<span class="gold-text">loger</span></span>
+          <span class="drawer-brand-sub" data-i18n="brand_tagline">Vedic Wisdom • Certified Guidance</span>
+        </div>
+      </div>
+      <button class="close-menu-btn" id="close-menu-btn" aria-label="Close navigation menu" title="Close Menu (Esc)">✕</button>
+    </div>
+
+    <div class="menu-drawer-body">
+      <!-- Quick Balance & Load Card in Drawer -->
+      <div class="drawer-wallet-card" id="drawer-wallet-card">
+        <div class="drawer-wallet-left">
+          <span class="drawer-wallet-icon">👛</span>
+          <div>
+            <span class="drawer-wallet-sub">Available Balance</span>
+            <strong class="drawer-wallet-amt" id="drawer-wallet-amt">₹150</strong>
+          </div>
+        </div>
+        <button class="drawer-load-btn" id="drawer-load-btn">⚡ Load Balance</button>
+      </div>
+
+      <div class="menu-section-label">⚡ MAIN NAVIGATION</div>
+      <nav class="drawer-nav-list" id="drawer-nav-list">
+        <a href="#consultations" class="drawer-nav-item active" data-nav="consult">
+          <span class="drawer-nav-icon">🔮</span>
+          <div class="drawer-nav-text">
+            <span class="drawer-nav-title" data-i18n="nav_consult">Top Astrologers</span>
+            <span class="drawer-nav-hint">Live Chat & Call • Google Verified</span>
+          </div>
+          <span class="drawer-nav-badge live">● Live</span>
+        </a>
+
+        <a href="#mall" class="drawer-nav-item" data-nav="mall">
+          <span class="drawer-nav-icon">💎</span>
+          <div class="drawer-nav-text">
+            <span class="drawer-nav-title" data-i18n="nav_mall">Gemstones & Rudraksha (Meesho)</span>
+            <span class="drawer-nav-hint">Pujas, Mala, Shankh & Yantra</span>
+          </div>
+          <span class="drawer-nav-badge meesho">Meesho</span>
+        </a>
+
+        <a href="#kundli" class="drawer-nav-item" data-nav="kundli">
+          <span class="drawer-nav-icon">📜</span>
+          <div class="drawer-nav-text">
+            <span class="drawer-nav-title" data-i18n="nav_kundli">Free Kundli</span>
+            <span class="drawer-nav-hint">Lagna, Moon Sign, Dasha & Dosha</span>
+          </div>
+          <span class="drawer-nav-badge free">100% Free</span>
+        </a>
+
+        <a href="#matching" class="drawer-nav-item" data-nav="matching">
+          <span class="drawer-nav-icon">💍</span>
+          <div class="drawer-nav-text">
+            <span class="drawer-nav-title" data-i18n="nav_matching">Kundli Matching</span>
+            <span class="drawer-nav-hint">36 Ashta Kuta Gun Milan</span>
+          </div>
+          <span class="drawer-nav-badge">Instant</span>
+        </a>
+
+        <a href="#horoscope" class="drawer-nav-item" data-nav="horoscope">
+          <span class="drawer-nav-icon">✨</span>
+          <div class="drawer-nav-text">
+            <span class="drawer-nav-title" data-i18n="nav_horoscope">Horoscopes</span>
+            <span class="drawer-nav-hint">Daily, Weekly & Monthly Forecasts</span>
+          </div>
+          <span class="drawer-nav-badge">Daily</span>
+        </a>
+
+        <a href="#tarot" class="drawer-nav-item" data-nav="tarot">
+          <span class="drawer-nav-icon">🃏</span>
+          <div class="drawer-nav-text">
+            <span class="drawer-nav-title" data-i18n="nav_tarot">Tarot Reading</span>
+            <span class="drawer-nav-hint">Interactive 3D 3-Card Spread</span>
+          </div>
+          <span class="drawer-nav-badge gold">3D Deck</span>
+        </a>
+
+        <a href="#calculators" class="drawer-nav-item" data-nav="calc">
+          <span class="drawer-nav-icon">🧮</span>
+          <div class="drawer-nav-text">
+            <span class="drawer-nav-title" data-i18n="nav_calc">Calculators</span>
+            <span class="drawer-nav-hint">Love Compatibility & Numerology</span>
+          </div>
+        </a>
+      </nav>
+
+      <!-- Astrologer Authority Highlight in Drawer -->
+      <div class="drawer-guru-card">
+        <div class="drawer-guru-badge">🌟 தலைமை ஜோதிடர் (Chief Astrologer)</div>
+        <strong class="drawer-guru-name">Astrologer: A.DEVARAJ</strong>
+        <p class="drawer-guru-desc">ஸ்ரீ பிரகஸ்பதி ஜோதிஷ பயிற்சி மையம்</p>
+        <p class="drawer-guru-addr">Kattupakkam / Kundrathur, Chennai - 69</p>
+        <div class="drawer-guru-actions">
+          <a href="tel:9382339084" class="drawer-call-btn">📞 93823 39084</a>
+          <a href="https://www.astrodevaraj.com" target="_blank" rel="noopener" class="drawer-web-btn">Website ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-drawer-footer">
+      <div class="drawer-footer-row">
+        <span>🛡️ 100% Private & Verified</span>
+        <span style="color:var(--gold-primary);">Om Ganapataye Namaha 🙏</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Hero Section -->
+  <main>
+    <section class="hero-section" id="hero">
+      <div class="hero-bg-glow"></div>
+      <div class="hero-constellation-grid"></div>
+      <div class="hero-particles" aria-hidden="true">
+        <span class="hero-particle" style="top:12%;left:8%;animation-delay:0s"></span>
+        <span class="hero-particle" style="top:28%;left:20%;animation-delay:0.6s"></span>
+        <span class="hero-particle" style="top:60%;left:5%;animation-delay:1.2s"></span>
+        <span class="hero-particle" style="top:75%;left:15%;animation-delay:0.3s"></span>
+        <span class="hero-particle" style="top:40%;left:45%;animation-delay:1.8s"></span>
+        <span class="hero-particle" style="top:18%;left:68%;animation-delay:0.9s"></span>
+        <span class="hero-particle" style="top:55%;left:80%;animation-delay:2.1s"></span>
+        <span class="hero-particle" style="top:85%;left:72%;animation-delay:0.4s"></span>
+      </div>
+
+      <div class="hero-split-layout">
+        <!-- LEFT: Text Content -->
+        <div class="hero-left">
+          <div class="hero-live-badge">
+            <span class="pulsing-dot"></span>
+            <span class="hero-live-count">1,240</span>
+            <span>astrologers online now</span>
+            <div class="hero-live-avatars">
+              <img src="images/god-murugan.jpg" alt="Astrologer" />
+              <img src="images/god-shiva.jpg" alt="Astrologer" />
+              <img src="images/vinayagar-logo.jpg" alt="Astrologer" />
+            </div>
+          </div>
+
+          <h1 class="hero-title-new">
+            India's most accurate<br>
+            <span class="gold-text hero-title-accent">astrology platform</span>
+          </h1>
+
+          <ul class="hero-checks">
+            <li><span class="hero-check-icon">&#10003;</span><span>Get Free detailed kundli</span></li>
+            <li><span class="hero-check-icon">&#10003;</span><span>Average reply under <strong>12</strong> seconds</span></li>
+            <li><span class="hero-check-icon">&#10003;</span><span>Consult 25,000+ Verified Astrologers</span></li>
+          </ul>
+
+          <div class="hero-cta-row">
+            <a href="#consultations" class="hero-cta-btn" id="hero-main-cta">Start Free Chat &rarr;</a>
+          </div>
+
+          <div class="hero-stats-row">
+            <div class="hero-stat">
+              <span class="hero-stat-val">5Cr+</span>
+              <span class="hero-stat-label">Users guided</span>
+            </div>
+            <div class="hero-stat">
+              <span class="hero-stat-val">50,000+</span>
+              <span class="hero-stat-label">Verified astrologers</span>
+            </div>
+            <div class="hero-stat">
+              <span class="hero-stat-val">13+</span>
+              <span class="hero-stat-label">Languages</span>
+            </div>
+            <div class="hero-stat">
+              <span class="hero-stat-val">60+</span>
+              <span class="hero-stat-label">Countries</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT: Astrologer Photo Composition (3 overlapping circles like Astrotalk) -->
+        <div class="hero-right">
+          <!-- Mandala/web background SVG -->
+          <div class="hero-mandala" aria-hidden="true">
+            <svg viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="300" cy="300" r="280" stroke="rgba(241,225,53,0.08)" stroke-width="1"/>
+              <circle cx="300" cy="300" r="220" stroke="rgba(241,225,53,0.06)" stroke-width="1" stroke-dasharray="6 6"/>
+              <circle cx="300" cy="300" r="160" stroke="rgba(241,225,53,0.07)" stroke-width="1"/>
+              <circle cx="300" cy="300" r="100" stroke="rgba(241,225,53,0.09)" stroke-width="1" stroke-dasharray="4 4"/>
+              <line x1="300" y1="20" x2="300" y2="580" stroke="rgba(241,225,53,0.04)" stroke-width="0.8"/>
+              <line x1="20" y1="300" x2="580" y2="300" stroke="rgba(241,225,53,0.04)" stroke-width="0.8"/>
+              <line x1="101" y1="101" x2="499" y2="499" stroke="rgba(241,225,53,0.04)" stroke-width="0.8"/>
+              <line x1="499" y1="101" x2="101" y2="499" stroke="rgba(241,225,53,0.04)" stroke-width="0.8"/>
+              <line x1="160" y1="20" x2="440" y2="580" stroke="rgba(241,225,53,0.025)" stroke-width="0.6"/>
+              <line x1="20" y1="160" x2="580" y2="440" stroke="rgba(241,225,53,0.025)" stroke-width="0.6"/>
+              <line x1="440" y1="20" x2="160" y2="580" stroke="rgba(241,225,53,0.025)" stroke-width="0.6"/>
+              <line x1="20" y1="440" x2="580" y2="160" stroke="rgba(241,225,53,0.025)" stroke-width="0.6"/>
+            </svg>
+          </div>
+
+          <!-- Three overlapping photo composition (Navagraha Deities from Vedic Art) -->
+          <div class="hero-photos-cluster" aria-label="Navagraha Celestial Deities">
+            <!-- Left oval photo: Chandra Dev (Moon Deity) -->
+            <div class="hero-cluster-photo hero-cluster-left" title="Chandra Dev (Moon Deity) — Navagraha Jyotish">
+              <img src="images/god-navagraha-chandra.jpg" alt="Chandra Dev - The Hindu God of Moon and Mind" />
+            </div>
+            <!-- Center large circle: Lord Surya Dev (King of Navagrahas) -->
+            <div class="hero-cluster-photo hero-cluster-center" title="Lord Surya Dev (Sun God) — King of Navagrahas">
+              <div class="hero-cluster-ring"></div>
+              <img src="images/god-navagraha-surya.jpg" alt="Surya Dev - King of the Navagrahas on 7-Horse Chariot" />
+            </div>
+            <!-- Right oval photo: Devguru Brihaspati (Jupiter) -->
+            <div class="hero-cluster-photo hero-cluster-right" title="Devguru Brihaspati (Jupiter) — Teacher of the Gods">
+              <img src="images/god-navagraha-guru.jpg" alt="Devguru Brihaspati - Jupiter, Master Teacher of the Gods" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Activity ticker bar -->
+      <div class="hero-ticker-bar">
+        <div class="hero-ticker-inner">
+          <span class="ticker-item"><span class="ticker-dot green"></span><strong>Rahul</strong> from Mumbai booked Saturn puja with <strong style="color:var(--gold-primary)">Pt. Ram Naresh</strong> &middot; just now</span>
+          <span class="ticker-sep">+</span>
+          <span class="ticker-item"><span class="ticker-dot gold"></span><strong>Neha</strong> from Hyderabad got her Kundli read by <strong style="color:var(--gold-primary)">Saanvi Sharma</strong> &middot; 4 min ago</span>
+          <span class="ticker-sep">+</span>
+          <span class="ticker-item"><span class="ticker-dot green"></span><strong>Aarav</strong> from Delhi consulted <strong style="color:var(--gold-primary)">Acharya Prem</strong> about career &middot; 2 min ago</span>
+          <span class="ticker-sep">+</span>
+          <span class="ticker-item"><span class="ticker-dot gold"></span><strong>Priya</strong> from Chennai ordered Ruby Gemstone via <strong style="color:var(--gold-primary)">Meesho</strong> &middot; 6 min ago</span>
+        </div>
+      </div>
+    </section>
+    <!-- SECTION 1: Consult India's Top Astrologers Live -->
+    <section class="section-container" id="consultations">
+      <div class="section-header">
+        <div class="section-badge" data-i18n="sec_consult_badge">LIVE CHAT • VERIFIED GURUS</div>
+        <h2 class="section-title" data-i18n="sec_consult_title">Consult India's Top Astrologers Live</h2>
+        <p class="section-subtitle" data-i18n="sec_consult_subtitle">
+          Consult India's leading Jyotish Acharyas, Vedic Gurus, and Palmists available 24/7 for instant chat.
+        </p>
+      </div>
+
+      <!-- Astrologer Filters & Toolbar -->
+      <div class="astrologer-toolbar">
+        <div class="search-box">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="astrologer-search"
+            placeholder="Filter directory by astrologer name, expertise, or languages..."
+            aria-label="Filter astrologers" />
+        </div>
+
+        <div class="filter-pills" id="category-filters">
+          <button class="pill active" data-category="all" data-i18n="cat_all">All Astrologers</button>
+          <button class="pill" data-category="vedic" data-i18n="cat_vedic">Vedic Astrology</button>
+          <button class="pill" data-category="tarot" data-i18n="cat_tarot">Tarot Reading</button>
+          <button class="pill" data-category="love" data-i18n="cat_love">Love & Marriage</button>
+          <button class="pill" data-category="career" data-i18n="cat_career">Career & Finance</button>
+          <button class="pill" data-category="numerology" data-i18n="cat_numerology">Numerology</button>
+          <button class="pill" data-category="vastu" data-i18n="cat_vastu">Vastu Shastra</button>
+        </div>
+
+        <div class="sort-selector">
+          <label for="sort-astrologers" data-i18n="sort_label">Sort by:</label>
+          <select id="sort-astrologers">
+            <option value="popularity">Most Popular</option>
+            <option value="experience">Years of Experience</option>
+            <option value="price-low">Price: Low to High</option>
+            <option value="price-high">Price: High to Low</option>
+            <option value="rating">Top Rated (4.9+)</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Astrologer Cards Grid -->
+      <div class="astrologers-grid" id="astrologers-grid">
+        <!-- Injected via JavaScript with Google Verification Links -->
+      </div>
+    </section>
+
+    <!-- SECTION 2: Certified Gemstones, Rudraksha & Online Pujas (Automatically Referred to Meesho) -->
+    <section class="section-container" id="mall">
+      <div class="section-header">
+        <div class="section-badge meesho-badge-glow" data-i18n="sec_mall_badge">🛍️ AUTOMATICALLY FULFILLED ON MEESHO •
+          WHOLESALE DEALS</div>
+        <h2 class="section-title" data-i18n="sec_mall_title">Certified Gemstones, Rudraksha & Online Pujas</h2>
+        <p class="section-subtitle" data-i18n="sec_mall_subtitle">
+          Authentic energised Vedic remedies tested in government-approved gemological labs. All items below
+          automatically refer to <strong>Meesho</strong> (<a href="https://www.meesho.com/" target="_blank"
+            rel="noopener" style="color:var(--gold-primary)">meesho.com</a>) for direct manufacturer prices, verified
+          customer photos, and Cash on Delivery.
+        </p>
+      </div>
+
+      <!-- Products Grid (Exclusive Authentic Meesho Puja Items & Samagri) -->
+      <div class="mall-products-grid" id="mall-products-grid">
+        <!-- Injected via JavaScript with direct Meesho referral buttons -->
+      </div>
+    </section>
+
+    <!-- SECTION 3: Vedic Kundli Generator -->
+    <section class="section-container alternate-bg" id="kundli">
+      <div class="section-header">
+        <div class="section-badge" data-i18n="sec_kundli_badge">ANCIENT JYOTISH ENGINE</div>
+        <h2 class="section-title" data-i18n="sec_kundli_title">Free Online Kundli</h2>
+        <p class="section-subtitle" data-i18n="sec_kundli_subtitle">Generate your authentic Vedic Janam Kundli with
+          planetary positions, Lagna chart, and dosha analysis.</p>
+      </div>
+
+      <div class="kundli-workspace">
+        <!-- Kundli Input Form -->
+        <div class="kundli-form-card">
+          <div class="card-top-header">
+            <h3 data-i18n="kundli_form_heading">Enter Your Birth Details</h3>
+            <span class="secure-badge" data-i18n="badge_private">🔒 100% Private</span>
+          </div>
+
+          <!-- Original Document Quick Loader & Photo Attachment -->
+          <div class="kundli-doc-toolbar">
+            <button type="button" class="btn-doc-load" id="btn-load-sample-kundli"
+              title="Auto-fill exact details from original printed horoscope sheet">
+              <span>📜 Load Original Document: Baby G. ESSAI (Dharmapuri 30-Oct-2023)</span>
+            </button>
+            <label class="btn-doc-upload" for="kundli-file-input"
+              title="Attach or scan your horoscope photo to extract original details">
+              <span>📷 Attach / Scan Kundli Photo</span>
+              <input type="file" id="kundli-file-input" accept="image/*" style="display:none;" />
+            </label>
+          </div>
+
+          <form id="kundli-form" class="cosmic-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="k-name" data-i18n="label_fullname">Full Name</label>
+                <input type="text" id="k-name" required placeholder="e.g. Rahul Sharma" value="Tharunesh Kumar" />
+              </div>
+              <div class="form-group">
+                <label for="k-gender" data-i18n="label_gender">Gender</label>
+                <select id="k-gender">
+                  <option value="male" data-i18n="opt_male">Male</option>
+                  <option value="female" data-i18n="opt_female">Female</option>
+                  <option value="other" data-i18n="opt_other">Other</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="k-dob" data-i18n="label_dob">Date of Birth</label>
+                <input type="date" id="k-dob" required value="1999-07-15" />
+              </div>
+              <div class="form-group">
+                <label for="k-tob" data-i18n="label_tob">Time of Birth</label>
+                <input type="time" id="k-tob" required value="08:30" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="k-pob" data-i18n="label_pob">Place of Birth (City)</label>
+              <input type="text" id="k-pob" required placeholder="e.g. New Delhi, Mumbai, Bengaluru"
+                value="Chennai, India" />
+            </div>
+
+            <button type="submit" class="primary-gold-btn pulse-glow" id="btn-generate-kundli">
+              <span data-i18n="btn_generate_kundli">Generate My Kundli Free</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </button>
+          </form>
+        </div>
+
+        <!-- Kundli Visual Result Output -->
+        <div class="kundli-result-card" id="kundli-result-container">
+          <div class="result-placeholder" id="kundli-placeholder">
+            <div class="star-halo">✨</div>
+            <h4 data-i18n="kundli_placeholder_title">Your Vedic Chart Will Appear Here</h4>
+            <p data-i18n="kundli_placeholder_desc">Fill in your birth coordinates to calculate your Lagna, Moon Sign,
+              Nakshatra, and House positions.</p>
+          </div>
+
+          <div class="result-active-content hidden" id="kundli-active-data">
+            <!-- Kundli Summary Header -->
+            <div class="kundli-header-banner">
+              <div class="kundli-header-top-row">
+                <div class="user-meta">
+                  <h3 id="res-k-name">Rahul Sharma</h3>
+                  <p id="res-k-birthinfo">15 Jul 1999, 08:30 AM • Chennai</p>
+                </div>
+                <button type="button" class="btn-print-kundli-sm" onclick="window.printKundliReport()" title="Print / Download PDF Report">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                    <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                    <rect x="6" y="14" width="12" height="8"></rect>
+                  </svg>
+                  <span>Print / PDF</span>
+                </button>
+              </div>
+              <div class="planetary-summary-pills">
+                <div class="pill-stat">
+                  <span class="label" data-i18n="label_ascendant">Ascendant (லக்னம்)</span>
+                  <strong id="res-k-lagna">Leo (Simha) 25° 43'</strong>
+                </div>
+                <div class="pill-stat">
+                  <span class="label" data-i18n="label_moonsign">Moon Sign (ராசி)</span>
+                  <strong id="res-k-moon">Aries (Mesha) 25° 51'</strong>
+                </div>
+                <div class="pill-stat">
+                  <span class="label" data-i18n="label_nakshatra">Nakshatra (நட்சத்திரம்)</span>
+                  <strong id="res-k-nakshatra">Bharani (Pada 4)</strong>
+                </div>
+                <div class="pill-stat">
+                  <span class="label">Thithi (திதி)</span>
+                  <strong id="res-k-thithi">Krishna Dvitiya (தேய்பிறை)</strong>
+                </div>
+                <div class="pill-stat">
+                  <span class="label">Dasa Balance (இருப்பு)</span>
+                  <strong id="res-k-dasabal">Venus 1Y 2M 21D</strong>
+                </div>
+                <div class="pill-stat">
+                  <span class="label">Current Dasa (நடப்பு)</span>
+                  <strong id="res-k-runningdasa" style="color:var(--gold-primary)">Sun Dasa (சூரிய திசை)</strong>
+                </div>
+              </div>
+            </div>
+
+            <!-- Dual Style Kundli Chart Diagram Canvas -->
+            <div class="chart-canvas-wrapper">
+              <div class="chart-canvas-header">
+                <div>
+                  <h4 id="chart-canvas-title">Vedic Lagna (Birth) Chart - South Indian Style (ராசி கட்டம்)</h4>
+                  <span class="chart-type-tag" id="chart-format-badge">Original Document Format (South Indian)</span>
+                </div>
+                <div class="chart-style-toggle-btns">
+                  <button type="button" class="btn-chart-style active" id="btn-chart-south"
+                    onclick="window.switchKundliStyle('south')">
+                    🔲 South Indian (கட்டம்)
+                  </button>
+                  <button type="button" class="btn-chart-style" id="btn-chart-north"
+                    onclick="window.switchKundliStyle('north')">
+                    💠 North Indian (வைரம்)
+                  </button>
+                </div>
+              </div>
+              <div class="chart-canvas-box">
+                <canvas id="kundli-canvas" width="460" height="460"></canvas>
+              </div>
+            </div>
+
+            <!-- Planetary Positions Table (Graha Nilai) -->
+            <div class="planets-table-wrap">
+              <div class="table-header-row">
+                <h4 data-i18n="planetary_table_title">Graha (Planetary) Positions & KP Coordinates</h4>
+                <span class="sub-caption">Ayanamsa: KP / Lahiri 24° 10' 42"</span>
+              </div>
+              <div class="table-responsive">
+                <table class="cosmic-table">
+                  <thead>
+                    <tr>
+                      <th data-i18n="th_planet">Planet (கிரகம்)</th>
+                      <th data-i18n="th_sign">Sign (ராசி)</th>
+                      <th data-i18n="th_degree">Exact Degree</th>
+                      <th data-i18n="th_house">House (பாவம்)</th>
+                      <th>Star Lord (நட்.அதிபதி)</th>
+                      <th>Sub Lord (உப.அதிபதி)</th>
+                      <th data-i18n="th_status">Status (நிலை)</th>
+                    </tr>
+                  </thead>
+                  <tbody id="planets-table-body">
+                    <!-- Populated dynamically -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Vimshottari Dasa Timeline Card -->
+            <div class="dasa-timeline-card" id="dasa-timeline-card">
+              <div class="dasa-timeline-header">
+                <h4>⏳ Vimshottari Dasa - Planetary Timeline</h4>
+                <span class="dasa-current-tag">Current: Surya Dasa (2025 - 2031)</span>
+              </div>
+              <div class="dasa-steps-grid" id="dasa-steps-grid">
+                <!-- Injected dynamically -->
+              </div>
+            </div>
+
+            <!-- Key Auspicious Yogas & Astrological Analysis -->
+            <div class="yogas-highlight-card" id="yogas-highlight-card">
+              <h4>🌟 Major Astrological Yogas & Vedic Analysis</h4>
+              <div class="yogas-grid" id="yogas-grid">
+                <!-- Injected dynamically -->
+              </div>
+            </div>
+
+            <!-- Dosha Analysis & Remedies -->
+            <div class="dosha-cards-grid">
+              <div class="dosha-card" id="mangal-dosha-card">
+                <div class="dosha-icon">🔥</div>
+                <div class="dosha-meta">
+                  <h5 data-i18n="dosha_mangal_title">Mangal (Mars) Dosha</h5>
+                  <p id="mangal-dosha-status">Anshik Manglik (Mild) • Neutralized</p>
+                  <span class="dosha-remedy" id="mangal-remedy" data-i18n="dosha_mangal_remedy">Remedy: Fasting on
+                    Tuesdays & wearing Red Coral (available on Meesho) brings peace.</span>
+                </div>
+              </div>
+              <div class="dosha-card" id="kaalsarp-card">
+                <div class="dosha-icon">🐍</div>
+                <div class="dosha-meta">
+                  <h5 data-i18n="dosha_kaalsarp_title">Kaal Sarp Dosha</h5>
+                  <p id="kaalsarp-status">Not Present (Yogakaraka Alignment)</p>
+                  <span class="dosha-remedy" data-i18n="dosha_kaalsarp_remedy">Planets are well-balanced; transits are
+                    auspicious.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Action Bar below Free Online Kundli section to Print / Download PDF -->
+      <div class="kundli-download-footer" id="kundli-download-footer">
+        <div class="kundli-download-card">
+          <div class="download-card-content">
+            <div class="download-card-icon">🖨️</div>
+            <div class="download-card-text">
+              <h4>Download Vedic Janam Kundli Report</h4>
+              <p>Save or print your complete birth chart, planetary coordinates, KP lords, Vimshottari Dasa timeline, and remedies as a PDF document.</p>
+            </div>
+          </div>
+          <button type="button" class="btn-print-kundli" id="btn-print-kundli" onclick="window.printKundliReport()">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 6 2 18 2 18 9"></polyline>
+              <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+              <rect x="6" y="14" width="12" height="8"></rect>
+            </svg>
+            <span>Print / Download PDF Report</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: Kundli Matching (36 Gun Milan) -->
+    <section class="section-container" id="matching">
+      <div class="section-header">
+        <div class="section-badge" data-i18n="sec_matching_badge">VIVAH COMPATIBILITY</div>
+        <h2 class="section-title" data-i18n="sec_matching_title">Kundli Matching (Ashta Kuta Gun Milan)</h2>
+        <p class="section-subtitle" data-i18n="sec_matching_subtitle">Check traditional 36-point marital compatibility,
+          mental harmony, and manglik alignment.</p>
+      </div>
+
+      <div class="matching-workspace">
+        <div class="matching-inputs-container">
+          <!-- Boy's Card -->
+          <div class="match-partner-card boy-card">
+            <div class="partner-header">
+              <span class="partner-icon">🤵</span>
+              <h3 data-i18n="partner_boy_title">Groom's Details (Boy)</h3>
+            </div>
+            <div class="form-group">
+              <label for="boy-name" data-i18n="label_name">Name</label>
+              <input type="text" id="boy-name" placeholder="Boy's Name" value="Aarav Verma" />
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="boy-dob" data-i18n="label_dob">Date of Birth</label>
+                <input type="date" id="boy-dob" value="1996-04-18" />
+              </div>
+              <div class="form-group">
+                <label for="boy-tob" data-i18n="label_tob">Time of Birth</label>
+                <input type="time" id="boy-tob" value="09:15" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="boy-pob" data-i18n="label_pob">Birth City</label>
+              <input type="text" id="boy-pob" value="Delhi, India" />
+            </div>
+          </div>
+
+          <!-- Matching Heart Connector -->
+          <div class="match-heart-center">
+            <div class="heart-pulse-icon">❤️</div>
+            <span class="heart-text">Gun Milan</span>
+          </div>
+
+          <!-- Girl's Card -->
+          <div class="match-partner-card girl-card">
+            <div class="partner-header">
+              <span class="partner-icon">👰</span>
+              <h3 data-i18n="partner_girl_title">Bride's Details (Girl)</h3>
+            </div>
+            <div class="form-group">
+              <label for="girl-name" data-i18n="label_name">Name</label>
+              <input type="text" id="girl-name" placeholder="Girl's Name" value="Priya Sharma" />
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="girl-dob" data-i18n="label_dob">Date of Birth</label>
+                <input type="date" id="girl-dob" value="1998-11-22" />
+              </div>
+              <div class="form-group">
+                <label for="girl-tob" data-i18n="label_tob">Time of Birth</label>
+                <input type="time" id="girl-tob" value="14:40" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="girl-pob" data-i18n="label_pob">Birth City</label>
+              <input type="text" id="girl-pob" value="Jaipur, India" />
+            </div>
+          </div>
+        </div>
+
+        <div class="matching-action-center">
+          <button class="primary-gold-btn pulse-glow" id="btn-calculate-match">
+            <span data-i18n="btn_calculate_match">Calculate 36 Gun Milan Compatibility</span>
+            <span class="btn-arrow">✨</span>
+          </button>
+        </div>
+
+        <!-- Matching Score Breakdown Display -->
+        <div class="match-results-display hidden" id="match-results-box">
+          <div class="score-card-hero">
+            <div class="score-gauge-box">
+              <div class="gauge-ring" id="match-gauge">
+                <div class="gauge-inner">
+                  <span class="score-big" id="gun-score-val">29.5</span>
+                  <span class="score-total">/ 36 Gunas</span>
+                </div>
+              </div>
+            </div>
+            <div class="verdict-meta">
+              <span class="verdict-badge" id="match-verdict-badge">EXCELLENT MATCH (Uttam)</span>
+              <h3 id="match-verdict-title">Highly Auspicious Union!</h3>
+              <p id="match-verdict-desc" data-i18n="match_verdict_desc">
+                Scores above 18/36 indicate great compatibility. At 29.5 Gunas, mental, physical, and spiritual harmony
+                between partners is strong.
+              </p>
+              <div class="verdict-dosha-status">
+                <span class="badge-pill pass">✓ Nadi Dosha: Safe</span>
+                <span class="badge-pill pass">✓ Bhakoot: Harmonious</span>
+                <span class="badge-pill pass">✓ Manglik Match: Neutral</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Ashta Kuta Breakdown Table -->
+          <div class="ashta-kuta-table-wrap">
+            <h4 data-i18n="ashta_kuta_title">Detailed 8-Kuta (Ashta Kuta) Breakdown</h4>
+            <table class="cosmic-table">
+              <thead>
+                <tr>
+                  <th data-i18n="th_kuta">Kuta</th>
+                  <th data-i18n="th_significance">Significance</th>
+                  <th data-i18n="th_max">Maximum</th>
+                  <th data-i18n="th_obtained">Obtained</th>
+                  <th data-i18n="th_result">Result</th>
+                </tr>
+              </thead>
+              <tbody id="ashta-kuta-tbody">
+                <!-- Dynamically loaded -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: Daily Horoscope Dashboard -->
+    <section class="section-container alternate-bg" id="horoscope">
+      <div class="section-header">
+        <div class="section-badge" data-i18n="sec_horoscope_badge">ZODIAC FORECASTS</div>
+        <h2 class="section-title" data-i18n="sec_horoscope_title">Daily, Weekly & Monthly Horoscopes</h2>
+        <p class="section-subtitle" data-i18n="sec_horoscope_subtitle">Accurate planetary transits mapped to all 12 Sun
+          & Moon signs.</p>
+      </div>
+
+      <!-- Zodiac Signs Single Horizontal Line Slider -->
+      <div class="zodiac-slider-wrapper">
+        <button type="button" class="zodiac-nav-arrow prev" id="zodiac-prev-btn" aria-label="Previous Zodiac Signs" title="Scroll Left">‹</button>
+        <div class="zodiac-slider-track" id="zodiac-slider-track" role="region" aria-label="12 Zodiac Signs Slider">
+          <!-- 12 Unique Visually Appealing Slides generated dynamically -->
+        </div>
+        <button type="button" class="zodiac-nav-arrow next" id="zodiac-next-btn" aria-label="Next Zodiac Signs" title="Scroll Right">›</button>
+      </div>
+
+      <!-- Horoscope Content Display Card with Live API Integration -->
+      <div class="horoscope-dashboard-card" id="horoscope-dashboard">
+        <!-- Live API Status Bar -->
+        <div class="h-api-banner">
+          <div class="h-api-status-left">
+            <span class="h-api-pulse-dot"></span>
+            <span class="h-api-status-label" id="h-api-status-text">⚡ Live Astrology API: Connected & Synced</span>
+            <span class="h-api-date-badge" id="h-api-date-badge">Today: Oct 31, 2026</span>
+          </div>
+          <button type="button" class="h-api-refresh-btn" id="h-api-refresh-btn" title="Fetch Latest Planetary Ephemeris">
+            <span class="refresh-icon" id="h-refresh-icon">🔄</span> Fetch Live Transit API
+          </button>
+        </div>
+
+        <div class="horoscope-tab-nav">
+          <button class="h-tab active" data-timeframe="today" data-i18n="tab_today">Today's Forecast</button>
+          <button class="h-tab" data-timeframe="tomorrow" data-i18n="tab_tomorrow">Tomorrow</button>
+          <button class="h-tab" data-timeframe="weekly" data-i18n="tab_weekly">Weekly Horizon</button>
+          <button class="h-tab" data-timeframe="monthly" data-i18n="tab_monthly">Monthly Overview</button>
+        </div>
+
+        <div class="horoscope-body">
+          <div class="h-header-row">
+            <div class="h-sign-ident">
+              <span class="h-sign-icon" id="h-active-icon">♈</span>
+              <div>
+                <h3 id="h-active-name">Aries (Mesha)</h3>
+                <p id="h-active-dates">Mar 21 - Apr 19 • Element: Fire • Ruler: Mars</p>
+              </div>
+            </div>
+            <div class="h-cosmic-indicators">
+              <div class="indicator-item">
+                <span class="ind-label" data-i18n="ind_luckynumber">Lucky Number</span>
+                <strong class="ind-value" id="h-lucky-number">9</strong>
+              </div>
+              <div class="indicator-item">
+                <span class="ind-label" data-i18n="ind_luckycolor">Lucky Color</span>
+                <strong class="ind-value" id="h-lucky-color">Crimson Red</strong>
+              </div>
+              <div class="indicator-item">
+                <span class="ind-label" data-i18n="ind_mood">Cosmic Mood</span>
+                <strong class="ind-value" id="h-mood">Bold & Dynamic</strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- Forecast Paragraphs -->
+          <div class="h-prediction-blocks">
+            <div class="prediction-block">
+              <div class="block-title"><span class="icon">✨</span> <span data-i18n="h_general_heading">General
+                  Outlook</span></div>
+              <p id="h-general-text">Today encourages dynamic forward momentum. Mars provides exceptional drive to
+                tackle complex problems. Trust your intuition when initiating important conversations.</p>
+            </div>
+
+            <div class="prediction-grid-two">
+              <div class="prediction-block">
+                <div class="block-title"><span class="icon">💖</span> <span data-i18n="h_love_heading">Love &
+                    Relationships</span> (88%)</div>
+                <div class="meter-bar">
+                  <div class="meter-fill" id="h-love-meter" style="width: 88%"></div>
+                </div>
+                <p id="h-love-text">Romantic transits favor candid emotional sharing. Single natives might encounter an
+                  intriguing connection in professional or creative spaces.</p>
+              </div>
+
+              <div class="prediction-block">
+                <div class="block-title"><span class="icon">💼</span> <span data-i18n="h_career_heading">Career &
+                    Wealth</span> (92%)</div>
+                <div class="meter-bar">
+                  <div class="meter-fill" id="h-career-meter" style="width: 92%"></div>
+                </div>
+                <p id="h-career-text">Financial negotiations will tilt in your favor. A pending decision regarding a
+                  venture or job role turns positive by evening.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="h-consult-prompt">
+            <span data-i18n="h_prompt_text">Want a tailored 1-on-1 reading for this sign?</span>
+            <button class="gold-border-btn" id="btn-h-consult" data-i18n="btn_h_consult">Speak with an Aries Specialist
+              Astrologer</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: 3D Interactive Tarot Card Reader -->
+    <section class="section-container" id="tarot">
+      <div class="section-header">
+        <div class="section-badge" data-i18n="sec_tarot_badge">MYSTIC ARCANA</div>
+        <h2 class="section-title" data-i18n="sec_tarot_title">Interactive 3-Card Tarot Reading</h2>
+        <p class="section-subtitle" data-i18n="sec_tarot_subtitle">Focus your question, shuffle the sacred deck, and
+          draw 3 cards for Past, Present, and Future guidance.</p>
+      </div>
+
+      <div class="tarot-reading-deck-zone">
+        <div class="tarot-control-row">
+          <div class="tarot-question-input">
+            <input type="text" id="tarot-user-question"
+              placeholder="Focus on your question (e.g., What is in store for my career?)" />
+          </div>
+          <button class="primary-gold-btn" id="btn-shuffle-tarot">
+            <span class="icon">🃏</span>
+            <span data-i18n="btn_shuffle_tarot">Shuffle & Draw Cards</span>
+          </button>
+        </div>
+
+        <!-- 3 Cards Spread Slots -->
+        <div class="tarot-cards-spread">
+          <!-- Card 1: Past -->
+          <div class="tarot-slot" id="tarot-slot-1">
+            <div class="slot-label" data-i18n="tarot_slot_1">1. THE PAST</div>
+            <div class="tarot-card-flipper" id="card-flipper-1">
+              <div class="card-face card-back">
+                <div class="tarot-back-design">
+                  <div class="mystic-orb">🔮</div>
+                  <span data-i18n="tarot_tap_reveal">Tap to Reveal</span>
+                </div>
+              </div>
+              <div class="card-face card-front" id="card-front-1">
+                <div class="tarot-art" id="tarot-art-1">🃏</div>
+                <h4 class="tarot-name" id="tarot-name-1">The Magician</h4>
+                <span class="tarot-pos" id="tarot-pos-1">Upright</span>
+              </div>
+            </div>
+            <div class="tarot-meaning-box hidden" id="tarot-meaning-1">
+              <p>Foundations laid with ingenuity, resourcefulness, and self-belief created past breakthroughs.</p>
+            </div>
+          </div>
+
+          <!-- Card 2: Present -->
+          <div class="tarot-slot" id="tarot-slot-2">
+            <div class="slot-label" data-i18n="tarot_slot_2">2. THE PRESENT</div>
+            <div class="tarot-card-flipper" id="card-flipper-2">
+              <div class="card-face card-back">
+                <div class="tarot-back-design">
+                  <div class="mystic-orb">🔮</div>
+                  <span data-i18n="tarot_tap_reveal">Tap to Reveal</span>
+                </div>
+              </div>
+              <div class="card-face card-front" id="card-front-2">
+                <div class="tarot-art" id="tarot-art-2">🌟</div>
+                <h4 class="tarot-name" id="tarot-name-2">The Star</h4>
+                <span class="tarot-pos" id="tarot-pos-2">Upright</span>
+              </div>
+            </div>
+            <div class="tarot-meaning-box hidden" id="tarot-meaning-2">
+              <p>Hope, divine inspiration, and spiritual clarity surround your current crossroad. Renewed confidence.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 3: Future -->
+          <div class="tarot-slot" id="tarot-slot-3">
+            <div class="slot-label" data-i18n="tarot_slot_3">3. THE FUTURE</div>
+            <div class="tarot-card-flipper" id="card-flipper-3">
+              <div class="card-face card-back">
+                <div class="tarot-back-design">
+                  <div class="mystic-orb">🔮</div>
+                  <span data-i18n="tarot_tap_reveal">Tap to Reveal</span>
+                </div>
+              </div>
+              <div class="card-face card-front" id="card-front-3">
+                <div class="tarot-art" id="tarot-art-3">☀️</div>
+                <h4 class="tarot-name" id="tarot-name-3">The Sun</h4>
+                <span class="tarot-pos" id="tarot-pos-3">Upright</span>
+              </div>
+            </div>
+            <div class="tarot-meaning-box hidden" id="tarot-meaning-3">
+              <p>Unbridled joy, vitality, and triumphant success await. Obstacles clear away into radiant light.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: Calculators (Love & Numerology) -->
+    <section class="section-container alternate-bg" id="calculators">
+      <div class="section-header">
+        <div class="section-badge" data-i18n="sec_calc_badge">RAPID COSMIC TOOLS</div>
+        <h2 class="section-title" data-i18n="sec_calc_title">Instant Astrology & Numerology Calculators</h2>
+        <p class="section-subtitle" data-i18n="sec_calc_subtitle">Discover your Life Path Mulank, Destiny Number, and
+          Love Compatibility score instantly.</p>
+      </div>
+
+      <div class="calculators-grid">
+        <!-- Love Compatibility Calculator -->
+        <div class="calc-card">
+          <div class="calc-header">
+            <span class="calc-icon">💘</span>
+            <div>
+              <h3 data-i18n="calc_love_title">Love Flame & Name Compatibility</h3>
+              <p data-i18n="calc_love_desc">Calculate affection resonance between two hearts</p>
+            </div>
+          </div>
+
+          <form id="love-calc-form" class="cosmic-form">
+            <div class="form-group">
+              <label for="love-name-1" data-i18n="label_yourname">Your Name</label>
+              <input type="text" id="love-name-1" placeholder="Enter your name" value="Rohan" required />
+            </div>
+            <div class="form-group">
+              <label for="love-name-2" data-i18n="label_partnername">Partner's Name</label>
+              <input type="text" id="love-name-2" placeholder="Enter partner's name" value="Ananya" required />
+            </div>
+            <button type="submit" class="primary-gold-btn" id="btn-calc-love" data-i18n="btn_check_love">Check Love
+              Resonance</button>
+          </form>
+
+          <div class="calc-result-box hidden" id="love-calc-result">
+            <div class="love-percentage-circle">
+              <span class="love-num" id="love-score-val">94%</span>
+              <span class="love-status" data-i18n="status_soulmate">Soulmate Vibration</span>
+            </div>
+            <p id="love-advice" data-i18n="love_advice_text">Exceptional emotional harmony! Venus fosters deep
+              understanding, shared artistic interests, and reciprocal loyalty.</p>
+          </div>
+        </div>
+
+        <!-- Numerology Destiny & Mulank Calculator -->
+        <div class="calc-card">
+          <div class="calc-header">
+            <span class="calc-icon">🔢</span>
+            <div>
+              <h3 data-i18n="calc_num_title">Numerology Mulank & Destiny</h3>
+              <p data-i18n="calc_num_desc">Uncover your core ruling planet and life path purpose</p>
+            </div>
+          </div>
+
+          <form id="numerology-calc-form" class="cosmic-form">
+            <div class="form-group">
+              <label for="num-name" data-i18n="label_fullname">Your Full Name</label>
+              <input type="text" id="num-name" placeholder="Name as per birth records" value="Siddharth Rao" required />
+            </div>
+            <div class="form-group">
+              <label for="num-dob" data-i18n="label_dob">Date of Birth</label>
+              <input type="date" id="num-dob" value="1995-10-28" required />
+            </div>
+            <button type="submit" class="primary-gold-btn" id="btn-calc-num" data-i18n="btn_calc_num">Calculate
+              Numerology</button>
+          </form>
+
+          <div class="calc-result-box hidden" id="num-calc-result">
+            <div class="num-pills-row">
+              <div class="num-stat-badge">
+                <span class="label" data-i18n="label_mulank">Mulank (Birth No.)</span>
+                <strong class="val" id="num-mulank-val">1 (Sun)</strong>
+              </div>
+              <div class="num-stat-badge">
+                <span class="label" data-i18n="label_destiny">Bhagyank (Destiny)</span>
+                <strong class="val" id="num-destiny-val">8 (Saturn)</strong>
+              </div>
+            </div>
+            <p id="num-explanation" data-i18n="num_explanation_text">Mulank 1 endows natural leadership, courage, and
+              magnetic vision. Destiny 8 ensures long-term wealth, executive authority, and perseverance through life's
+              trials.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 8: Reviews & Customer Testimonials -->
+    <section class="section-container" id="reviews">
+      <div class="section-header">
+        <div class="section-badge" data-i18n="sec_reviews_badge">LOVED BY MILLIONS • GOOGLE VERIFIED</div>
+        <h2 class="section-title" data-i18n="sec_reviews_title">Stories of Transformation & Hope</h2>
+        <p class="section-subtitle" data-i18n="sec_reviews_subtitle">Real experiences verified through Google Reviews
+          and Astrologer consultations.</p>
+      </div>
+
+      <div class="reviews-carousel-grid">
+        <div class="review-card">
+          <div class="rev-stars">★★★★★ <span class="g-verified-tag">Google Verified</span></div>
+          <p class="rev-quote" data-i18n="rev_1_quote">"I verified Acharya Divakar on Google and consulted him for my
+            job switch. His precise prediction about March turned out 100% accurate! Also bought my Ruby via Meesho with
+            genuine lab certificate."</p>
+          <div class="rev-author">
+            <div class="rev-avatar">SG</div>
+            <div>
+              <strong>Sneha Ganguly</strong>
+              <span>Consulted Acharya Divakar • Bengaluru</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="rev-stars">★★★★★ <span class="g-verified-tag">Google Verified</span></div>
+          <p class="rev-quote" data-i18n="rev_2_quote">"The Kundli matching gave us absolute clarity. We ordered the
+            Navgrah Shanti Puja samagri kit directly from Meesho at wholesale price with cash on delivery."</p>
+          <div class="rev-author">
+            <div class="rev-avatar">VK</div>
+            <div>
+              <strong>Vikramaditya Kulkarni</strong>
+              <span>Kundli Matching & Puja Kit • Mumbai</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="rev-stars">★★★★★ <span class="g-verified-tag">Google Verified</span></div>
+          <p class="rev-quote" data-i18n="rev_3_quote">"Tarot Reader Meera's reading was spot-on about my relationship.
+            The 3-card spread brought instant peace of mind during a turbulent breakup. Thank you Astrologer platform!"
+          </p>
+          <div class="rev-author">
+            <div class="rev-avatar">PR</div>
+            <div>
+              <strong>Pooja Rathi</strong>
+              <span>Consulted Meera Tarot • New Delhi</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer Matching Astrologer Brand -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-col brand-col">
+        <div class="brand-logo footer-logo">
+          <div class="logo-icon-wrap footer-logo-icon">
+            <img src="images/vinayagar-logo.jpg" alt="Lord Vinayagar Logo" class="vinayagar-logo-img" />
+          </div>
+          <span class="brand-name">Astro<span class="gold-text">loger</span></span>
+        </div>
+        <!-- Astrologer Credentials & Publication Center (Source: Astrologer A. Devaraj) -->
+        <div class="astrologer-authority-card">
+          <div class="authority-badge">🌟 தலைமை ஜோதிடர் & ஆசான் (Master Astrologer)</div>
+          <div class="authority-main">
+            <span class="authority-label">Astrologer:</span>
+            <strong class="authority-name">A.DEVARAJ</strong>
+          </div>
+          <p class="authority-address">
+            📍 Kattupakkam, Chennai-56 &nbsp;|&nbsp; 📱 Cell: <a href="tel:9382339084" class="gold-link">93823 39084</a>
+          </p>
+
+          <div class="center-publish-box">
+            <span class="publish-note">இந்த மென்பொருளை தயாரித்து வெளியிட்டோர்:</span>
+            <h4 class="center-title">ஸ்ரீ பிரகஸ்பதி ஜோதிஷ பயிற்சி மையம்</h4>
+            <p class="center-location">குன்றத்தூர், சென்னை — 69.</p>
+            <div class="center-links">
+              <span>Mobile: <a href="tel:9382339084" class="gold-link"><strong>93823 39084</strong></a></span>
+              <span>Website: <a href="https://www.astrodevaraj.com" target="_blank" rel="noopener"
+                  class="gold-link"><strong>www.astrodevaraj.com</strong> ↗</a></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4 data-i18n="f_col1_title">Top Astrologers</h4>
+        <ul>
+          <li><a href="#consultations" data-i18n="nav_consult">Consult Astrologers Live</a></li>
+          <li><a href="#consultations">Vedic Jyotish Masters</a></li>
+          <li><a href="#consultations">Certified Tarot Readers</a></li>
+          <li><a href="#consultations">Numerology Experts</a></li>
+          <li><a href="https://www.google.com/search?q=best+astrologers+in+india" target="_blank">Google Astrologer
+              Directory ↗</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 data-i18n="f_col2_title">Gemstones & Rudraksha (Meesho)</h4>
+        <ul>
+          <li><a href="https://www.meesho.com/search?q=certified+natural+manik+ruby+gemstone" target="_blank">Certified
+              Ruby (Manik) on Meesho ↗</a></li>
+          <li><a href="https://www.meesho.com/search?q=certified+panna+emerald+gemstone" target="_blank">Certified
+              Emerald (Panna) on Meesho ↗</a></li>
+          <li><a href="https://www.meesho.com/search?q=original+5+mukhi+rudraksha+mala+nepal" target="_blank">5 Mukhi
+              Rudraksha Mala on Meesho ↗</a></li>
+          <li><a href="https://www.meesho.com/search?q=1+mukhi+rudraksha+certified" target="_blank">1 Mukhi Rudraksha on
+              Meesho ↗</a></li>
+          <li><a href="https://www.meesho.com/search?q=sri+yantra+gold+plated+meru" target="_blank">Sri Yantra Meru on
+              Meesho ↗</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 data-i18n="f_col3_title">Free Astrology Tools</h4>
+        <ul>
+          <li><a href="#kundli" data-i18n="nav_kundli">Free Janam Kundli</a></li>
+          <li><a href="#matching" data-i18n="nav_matching">Kundli Matching (Gun Milan)</a></li>
+          <li><a href="#horoscope" data-i18n="nav_horoscope">Daily Horoscopes</a></li>
+          <li><a href="#tarot" data-i18n="nav_tarot">3D Tarot Card Reading</a></li>
+          <li><a href="#calculators" data-i18n="nav_calc">Love Compatibility Calculator</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 <strong>Astrologer</strong> Services Private Limited. Integrated with Google Verification & Meesho
+        Direct Fulfillment. Built with REA.</p>
+    </div>
+  </footer>
+
+  <!-- MODAL: Live Chat Consultation Simulator -->
+  <div class="modal-overlay hidden" id="chat-modal">
+    <div class="chat-modal-window">
+      <!-- Chat Header -->
+      <div class="chat-modal-header">
+        <div class="astrologer-chat-profile">
+          <div class="chat-avatar-wrap">
+            <img id="chat-astrologer-avatar" src="" alt="Astrologer Avatar" />
+            <span class="status-indicator online"></span>
+          </div>
+          <div>
+            <h3 id="chat-astrologer-name">Acharya Divakar</h3>
+            <span class="chat-meta-subtitle" id="chat-astrologer-meta">Vedic • 16 Yrs Exp • 4.96 ★ (Google
+              Verified)</span>
+          </div>
+        </div>
+
+        <div class="chat-header-actions">
+          <div class="session-timer-badge">
+            <span class="timer-dot"></span>
+            <span id="session-timer">05:00</span>
+          </div>
+          <button class="close-modal-btn" id="btn-close-chat" aria-label="End Chat">✕</button>
+        </div>
+      </div>
+
+      <!-- Live Messages Scroll Container -->
+      <div class="chat-messages-container" id="chat-messages">
+        <!-- Messages appended dynamically -->
+      </div>
+
+      <!-- Quick Query Suggestions -->
+      <div class="chat-quick-queries" id="chat-quick-queries">
+        <button class="quick-btn" data-query="When will I find true love or get married?">💍 Marriage Timing</button>
+        <button class="quick-btn" data-query="What does my career and job transition look like this year?">💼 Career
+          Transition</button>
+        <button class="quick-btn" data-query="How can I improve my financial stability and investments?">💰 Financial
+          Wealth</button>
+        <button class="quick-btn" data-query="Which gemstone or Rudraksha should I wear from Meesho?">💎 Recommended
+          Gemstone / Rudraksha</button>
+        <button class="quick-btn" data-query="Are there any planetary doshas impacting my progress?">🔥 Dosha
+          Check</button>
+      </div>
+
+      <!-- Chat Input Form -->
+      <form class="chat-input-bar" id="chat-form">
+        <input type="text" id="chat-user-input" placeholder="Ask your question to the astrologer..." autocomplete="off"
+          required />
+        <button type="submit" class="chat-send-btn" id="btn-send-chat" aria-label="Send message">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
+          </svg>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL: Audio Call Consultation Simulator -->
+  <div class="modal-overlay hidden" id="call-modal">
+    <div class="call-modal-window">
+      <div class="call-avatar-pulse">
+        <div class="pulse-ring ring-1"></div>
+        <div class="pulse-ring ring-2"></div>
+        <img id="call-astrologer-avatar" src="" alt="Astrologer Avatar" />
+      </div>
+
+      <h3 id="call-astrologer-name">Acharya Divakar</h3>
+      <p id="call-astrologer-exp">Vedic Astrology • Google Verified Master</p>
+      <div class="call-status-pill" id="call-status-label">Calling... Connecting guru line 📞</div>
+      <div class="call-timer hidden" id="call-timer-label">00:00</div>
+
+      <!-- Real-time Audio Waveform Visualizer -->
+      <div class="audio-waves hidden" id="call-audio-waves">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+      </div>
+
+      <!-- Live Voice Call Transcript Box -->
+      <div class="call-transcript-box hidden" id="call-transcript">
+        <p class="transcript-line speaker-astrologer" id="call-transcript-text">
+          <strong>Astrologer:</strong> "Hari Om, Namaste! I am tuning into your birth chart right now. Please ask what
+          guidance you seek."
+        </p>
+      </div>
+
+      <!-- Interactive Voice Topics for Immediate Spoken Consultation -->
+      <div class="call-voice-topics hidden" id="call-voice-topics">
+        <div class="voice-topics-title">🗣️ Tap to Hear Guru Speak on Topic:</div>
+        <div class="voice-chips-grid">
+          <button type="button" class="voice-topic-btn" data-topic="gessai">📜 Baby G. Essai Horoscope</button>
+          <button type="button" class="voice-topic-btn" data-topic="career">💼 Career & Promotion</button>
+          <button type="button" class="voice-topic-btn" data-topic="marriage">💍 Marriage & 7th House</button>
+          <button type="button" class="voice-topic-btn" data-topic="wealth">💰 Wealth & Lakshmi Yoga</button>
+          <button type="button" class="voice-topic-btn" data-topic="dosha">🔥 Dosha Shanti & Gemstone</button>
+        </div>
+      </div>
+
+      <!-- Custom Voice/Text Question Form -->
+      <form class="call-voice-form hidden" id="call-voice-form" onsubmit="window.handleCallVoiceSubmit(event)">
+        <input type="text" id="call-voice-input" placeholder="Ask Guru any question to hear live spoken answer..."
+          autocomplete="off" />
+        <button type="submit" class="call-voice-send-btn" title="Ask Guru">
+          <span>Ask</span> 🗣️
+        </button>
+      </form>
+
+      <div class="call-controls">
+        <button class="call-btn btn-mute" id="btn-call-mute" title="Toggle Astrologer Voice Speech">
+          <span id="call-mute-icon">🔊</span> <span id="call-mute-label">Voice ON</span>
+        </button>
+        <button class="call-btn btn-hangup" id="btn-call-hangup" title="End Call">📞 End Call</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: Load Balance & Wallet Recharge -->
+  <div class="modal-overlay hidden" id="wallet-modal">
+    <div class="wallet-modal-window">
+      <div class="wallet-modal-header">
+        <div class="wallet-header-title-wrap">
+          <span class="wallet-modal-icon">💳</span>
+          <div>
+            <h3 data-i18n="wallet_modal_title">Load Balance & Recharge</h3>
+            <span class="wallet-modal-sub">Instant Top-Up for Live Consultations</span>
+          </div>
+        </div>
+        <button class="close-modal-btn" id="btn-close-wallet" title="Close (Esc)">✕</button>
+      </div>
+
+      <!-- Live Balance Display Card -->
+      <div class="wallet-balance-card">
+        <div class="wallet-bal-top">
+          <span class="label" data-i18n="wallet_current_bal">Current Available Balance</span>
+          <span class="wallet-secure-badge">🛡️ 256-Bit SSL Secured</span>
+        </div>
+        <strong class="balance" id="modal-wallet-balance">₹150</strong>
+        <span class="offer-hint" data-i18n="wallet_offer_hint">🎉 First consultation is free! Top up now to consult senior gurus.</span>
+      </div>
+
+      <!-- Select Preset Recharge Amount -->
+      <h4 data-i18n="wallet_select_amt">Select Recharge Amount</h4>
+      <div class="preset-amounts-grid">
+        <button type="button" class="preset-btn" data-amt="50">₹50<span class="badge">Starter</span></button>
+        <button type="button" class="preset-btn active" data-amt="100">₹100<span class="badge popular">Popular ⭐</span></button>
+        <button type="button" class="preset-btn" data-amt="200">₹200<span class="badge">+₹20 Bonus</span></button>
+        <button type="button" class="preset-btn" data-amt="500">₹500<span class="badge hot">+₹75 Extra</span></button>
+        <button type="button" class="preset-btn" data-amt="1000">₹1,000<span class="badge hot">+₹200 Extra</span></button>
+        <button type="button" class="preset-btn" data-amt="2000">₹2,000<span class="badge vip">+₹500 VIP</span></button>
+      </div>
+
+      <!-- Custom Amount Input -->
+      <div class="custom-amount-wrap">
+        <label for="custom-wallet-input" class="custom-amt-label">Or enter custom amount:</label>
+        <div class="custom-input-box">
+          <span class="currency-prefix">₹</span>
+          <input type="number" id="custom-wallet-input" min="20" max="50000" placeholder="Enter amount (e.g. 350)" />
+        </div>
+      </div>
+
+      <!-- Payment Method Selection -->
+      <div class="payment-methods-section">
+        <span class="pay-method-label">Payment Method:</span>
+        <div class="payment-pills">
+          <label class="pay-pill active">
+            <input type="radio" name="pay_method" value="upi" checked />
+            <span class="pill-dot"></span>
+            <span>⚡ UPI / GPay / PhonePe / Paytm</span>
+          </label>
+          <label class="pay-pill">
+            <input type="radio" name="pay_method" value="card" />
+            <span class="pill-dot"></span>
+            <span>💳 Cards (Visa/Mastercard/RuPay)</span>
+          </label>
+          <label class="pay-pill">
+            <input type="radio" name="pay_method" value="netbanking" />
+            <span class="pill-dot"></span>
+            <span>🏦 Net Banking & Wallets</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Coupon / Promo Code -->
+      <div class="wallet-coupon-wrap">
+        <div class="coupon-input-group">
+          <input type="text" id="wallet-coupon-input" placeholder="Enter Coupon Code" value="ASTRO50" />
+          <button type="button" id="btn-apply-coupon" class="coupon-apply-btn">Applied ✓</button>
+        </div>
+        <p class="coupon-success-note" id="coupon-note">🎉 <strong>ASTRO50</strong> applied: 50% extra talktime bonus included!</p>
+      </div>
+
+      <!-- Main Action Button -->
+      <button class="primary-gold-btn load-balance-confirm-btn" id="btn-confirm-recharge">
+        <span class="btn-spinner hidden" id="recharge-spinner"></span>
+        <span class="btn-text" id="recharge-btn-text">⚡ Load ₹100 to Balance</span>
+      </button>
+      <div class="wallet-guarantee-note">
+        <span>🔒 100% Secure Checkout</span> • <span>⚡ Instant Balance Credit</span> • <span>🔄 100% Refundable</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cart Drawer -->
+  <div class="cart-drawer-overlay hidden" id="cart-drawer">
+    <div class="cart-drawer-content">
+      <div class="cart-drawer-header">
+        <h3>Shopping Bag (<span id="cart-drawer-count">0</span>)</h3>
+        <button class="close-modal-btn" id="btn-close-cart">✕</button>
+      </div>
+      <div class="cart-items-list" id="cart-items-list">
+        <!-- Rendered dynamically -->
+      </div>
+      <div class="cart-drawer-footer">
+        <div class="cart-total-row">
+          <span>Total Payable:</span>
+          <strong id="cart-total-amount">₹0</strong>
+        </div>
+        <p style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 0.8rem;">
+          Orders are fulfilled with certified quality assurance and can be tracked directly on Meesho.
+        </p>
+        <button class="primary-gold-btn" id="btn-cart-checkout">Proceed to Order via Meesho</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- ===== PROMO POSTER MODAL (auto-shows on page load) ===== -->
+  <div class="promo-poster-overlay" id="promo-poster-modal" role="dialog" aria-modal="true" aria-label="KP Astrology Online Classes Promotion">
+    <div class="promo-poster-box">
+      <!-- Close Button -->
+      <button class="promo-poster-close" id="promo-poster-close-btn" aria-label="Close promotion" title="Close (Esc)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <!-- Ribbon Badge -->
+      <div class="promo-ribbon">⭐ SPECIAL OFFER</div>
+
+      <!-- Poster Image -->
+      <a href="https://www.astrodevaraj.com/" target="_blank" rel="noopener noreferrer" class="promo-poster-link" title="Visit AstroDevaraj.com for KP Astrology Classes">
+        <img
+          src="images/promo-poster.jpg"
+          alt="KP Astrology Online Zoom Classes — 60 Recorded Videos + 15 Live Sessions — Rs.7500 — astrodevaraj.com"
+          class="promo-poster-img"
+          loading="eager"
+        />
+      </a>
+
+      <!-- Footer CTA bar -->
+      <div class="promo-poster-footer">
+        <div class="promo-footer-info">
+          <span class="promo-footer-phone">📞 93823 39084</span>
+          <span class="promo-footer-site">🌐 astrodevaraj.com</span>
+        </div>
+        <div class="promo-footer-actions">
+          <label class="promo-dont-show">
+            <input type="checkbox" id="promo-dont-show-again" />
+            <span>Don't show again</span>
+          </label>
+          <button class="promo-close-cta-btn" id="promo-close-cta-btn">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ===== END PROMO POSTER MODAL ===== -->
+
+  <!-- Multilingual Engine & Core Logic -->
+  <script src="translations.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>

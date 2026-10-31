@@ -1,0 +1,19 @@
+{
+  "name": "astrotalk-clone",
+  "version": "1.0.0",
+  "description": "Reverse-engineered and reconstructed Astrotalk platform with live consultations, Vedic Kundli, Gun Milan, Horoscopes, and 3D Tarot.",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "astrology",
+    "astrotalk",
+    "vedic-kundli",
+    "tarot",
+    "gun-milan"
+  ],
+  "author": "Antigravity REA Reconstructor",
+  "license": "MIT"
+}
